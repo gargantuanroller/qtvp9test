@@ -1,0 +1,42 @@
+File
+New Tab			Ctrl+T
+New Window		Ctrl+N
+Create New Folder	Ctrl+shift+N
+Create New Document
+---------
+Connect to server
+---------
+Properties Alt+Enter
+---------
+Close All Windows	Ctrl+Q
+Close 			Ctrl+W
+
+
+Edit
+Undo			Ctrl+Z
+Redo			Ctrl+Y
+---------
+Cut			Ctrl+X
+Copy			Ctrl+C
+Paste			Ctrl+V
+--------
+Select All		Ctrl+A
+Select Items Matchin...	Ctrl+S
+Invert Selection	Ctrl+shift+I
+---------
+Duplicate
+Make Links		Ctrl+M
+Rename			F2
+Copy To
+Move To
+---------
+Move to Trash
+---------
+Preferences
+
+Stop
+Reload			Ctrl+R
+Sidebar
+Main Toolbar
+Statusbar
+Extra Pne
