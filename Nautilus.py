@@ -1,29 +1,37 @@
+import os, sys
 from PySide import QtCore, QtGui, QtUiTools
-
-class NautilusQMainWindow(QtGui.QMainWindow):
-	def __init__(self, *args):  
-		apply(QtGui.QMainWindow.__init__, (self,) + args)
-
-		loader = QtUiTools.QUiLoader()
-		file = QtCore.QFile("Nautilus.ui")
-		file.open(QtCore.QFile.ReadOnly)
-		self.NautilusQMainWindow = loader.load(file, self)
-		file.close()
-
-		self.setCentralWidget(self.NautilusQMainWindow)
-
 if __name__ == '__main__':
-	import os, sys
-	print("Running in " + os.getcwd() + " .\n")
-	print("os.path.dirname(os.path.realpath(__file__)) = " + os.path.dirname(os.path.realpath(__file__)) + " .\n\n")
+	os.chdir(os.path.dirname(os.path.realpath(__file__)))
+	print("Running in " + os.getcwd() + "\n")
+
+def uiToWidget(uiPath):
+	loader = QtUiTools.QUiLoader()
+	file = QtCore.QFile(os.path.normpath(uiPath))
+	file.open(QtCore.QFile.ReadOnly)
+	widget = loader.load(file)
+	file.close()
+	return widget
 
 
-	app = QtGui.QApplication(sys.argv)  
+#class NautilusQMainWindow(QtGui.QMainWindow):
+#	def __init__(self, *args): 
+#		apply(QtGui.QMainWindow.__init__, (self,) + args)
 
-	win  = NautilusQMainWindow()  
-	win.show()
+#		loader = QtUiTools.QUiLoader()
+#		file = QtCore.QFile(os.getcwd() + "/Nautilus.ui")
+#		file.open(QtCore.QFile.ReadOnly)
+#		self.NautilusQMainWindow = loader.load(file, self)
+#		file.close()
 
-	app.connect(app, QtCore.SIGNAL("lastWindowClosed()"),
-		app, QtCore.SLOT("quit()"))
-	app.exec_()
+#		self.setCentralWidget(self.NautilusQMainWindow)
+
+#if __name__ == '__main__':
+#	app = QtGui.QApplication(sys.argv) 
+
+#	win  = NautilusQMainWindow() 
+#	win.show()
+
+#	app.connect(app, QtCore.SIGNAL("lastWindowClosed()"),
+#		app, QtCore.SLOT("quit()"))
+#	app.exec_()
 
